@@ -6,26 +6,90 @@
     <title>DML TECH USA - Official Website</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Arial', sans-serif; background: #0a0a0a; color: #fff; }
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); padding: 20px; }
-        .logo { font-size: 4rem; font-weight: 900; background: linear-gradient(45deg, #00f5ff, #0066ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; }
-        .tagline { font-size: 1.5rem; color: #00f5ff; margin-bottom: 2rem; }
-        .btn { padding: 15px 30px; background: #0066ff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; display: inline-block; }
-        .btn:hover { background: #00f5ff; color: #000; transform: translateY(-2px); }
-        .spider { font-size: 3rem; animation: float 3s ease-in-out infinite; margin-bottom: 1rem; }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-        @media (max-width: 768px) { .logo { font-size: 2.5rem; } .tagline { font-size: 1.2rem; } }
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background: #0a0a0a; 
+            color: #fff; 
+            min-height: 100vh;
+        }
+        .nav { 
+            padding: 20px; 
+            background: #111; 
+            text-align: center;
+            border-bottom: 2px solid #00f5ff;
+            position: sticky;
+            top: 0;
+        }
+        .nav a { 
+            color: #00f5ff; 
+            margin: 0 15px; 
+            text-decoration: none; 
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .nav a:hover { 
+            color: #fff; 
+            text-shadow: 0 0 10px #00f5ff;
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 50px auto; 
+            padding: 20px; 
+            text-align: center; 
+        }
+        h1 { 
+            font-size: 3.5rem; 
+            color: #00f5ff; 
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px #00f5ff;
+        }
+        .spider { 
+            font-size: 3rem; 
+            margin: 20px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        p { 
+            font-size: 1.3rem; 
+            line-height: 1.8; 
+            color: #ccc; 
+            margin-bottom: 2rem; 
+        }
+        .btn { 
+            padding: 15px 30px; 
+            background: #0066ff; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-weight: bold; 
+            display: inline-block; 
+            margin: 10px;
+            box-shadow: 0 0 15px #0066ff;
+            transition: 0.3s;
+        }
+        .btn:hover { 
+            background: #0052cc; 
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <div>
-            <div class="spider">🕷️</div>
-            <h1 class="logo">DML TECH USA</h1>
-            <p class="tagline">Innovation. Technology. Excellence.</p>
-            <p style="margin-bottom: 2rem; color: #ccc;">Official US Branch of DML TECH</p>
-            <a href="https://github.com/slimdadyDMLTechUSA" class="btn">Visit Our GitHub</a>
-        </div>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="container">
+        <div class="spider">🕷️</div>
+        <h1>DML TECH USA</h1>
+        <p>Innovation. Technology. Excellence.</p>
+        <p>Welcome to the official website of DML TECH United States branch.</p>
+        <a href="about.html" class="btn">About Us</a>
+        <a href="https://github.com/slimdadyDMLTechUSA" class="btn">Visit Our GitHub</a>
     </div>
 </body>
 </html>
