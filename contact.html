@@ -1,92 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - DML TECH USA</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Arial', sans-serif; 
-            background: #0a0a0a; 
-            color: #fff; 
-        }
-        .nav { 
-            padding: 20px; 
-            background: #111; 
-            text-align: center;
-            border-bottom: 2px solid #00f5ff;
-            position: sticky;
-            top: 0;
-        }
-        .nav a { 
-            color: #00f5ff; 
-            margin: 0 15px; 
-            text-decoration: none; 
-            font-weight: bold;
-        }
-        .nav a:hover { color: #fff; text-shadow: 0 0 10px #00f5ff; }
-        .container { 
-            max-width: 800px; 
-            margin: 50px auto; 
-            padding: 20px; 
-        }
-        h1 { 
-            font-size: 3rem; 
-            color: #00f5ff; 
-            text-align: center;
-            margin-bottom: 2rem;
-            text-shadow: 0 0 20px #00f5ff;
-        }
-        .contact-box { 
-            background: #111; 
-            padding: 40px; 
-            border-radius: 10px;
-            border: 2px solid #0066ff;
-            text-align: center;
-        }
-        .contact-box p { 
-            font-size: 1.2rem; 
-            margin: 20px 0; 
-            color: #ccc; 
-        }
-        .btn {
-            background: #00f5ff;
-            color: #0a0a0a;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin: 10px;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background: #0066ff;
-            color: #fff;
-            box-shadow: 0 0 20px #0066ff;
-        }
-        .spider { text-align: center; font-size: 2rem; margin: 20px 0; }
-        .email { color: #00f5ff; font-size: 1.3rem; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - DML TECH USA</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #0a0a0a; color: #fff; padding: 20px; }
+    .container { max-width: 600px; margin: 0 auto; background: #111; padding: 30px; border-radius: 10px; border: 1px solid #333; }
+    h1 { color: #00ff88; text-align: center; }
+    label { display: block; margin-top: 15px; margin-bottom: 5px; color: #00ff88; }
+    input, textarea { width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #333; border-radius: 5px; color: #fff; box-sizing: border-box; }
+    button { width: 100%; padding: 15px; margin-top: 20px; background: #00ff88; color: #000; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+    button:hover { background: #00cc6a; }
+    .success { display: none; text-align: center; color: #00ff88; margin-top: 15px; }
+  </style>
 </head>
 <body>
-    <div class="nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-    </div>
-    <div class="container">
-        <div class="spider">🕷️</div>
-        <h1>Contact DML TECH USA</h1>
-        <div class="contact-box">
-            <p>Ready to build the future with us?</p>
-            <p class="email">📧 contact@dmltechusa.com</p>
-            <p>🌐 GitHub: github.com/slimdadyDMLTechUSA</p>
-            <a href="mailto:contact@dmltechusa.com" class="btn">Send Email</a>
-            <a href="https://github.com/slimdadyDMLTechUSA" class="btn">Visit GitHub</a>
-        </div>
-    </div>
+  <div class="container">
+    <h1>Contact DML TECH USA 🕷️</h1>
+    <form id="contact-form" action="https://formspree.io/f/xkoklapo" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" name="name" id="name" required>
+      
+      <label for="email">Your Email</label>
+      <input type="email" name="email" id="email" required>
+      
+      <label for="phone">Phone Number</label>
+      <input type="tel" name="phone" id="phone">
+      
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="6" required></textarea>
+      
+      <button type="submit">Send Message ⚡</button>
+      <p class="success" id="success-msg">Message sent! Tutakujibu ASAP 💎</p>
+    </form>
+  </div>
+  <script>
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        form.reset();
+        document.getElementById('success-msg').style.display = 'block';
+      } else {
+        alert('Error sending message. Try again MKUU.');
+      }
+    });
+  </script>
 </body>
 </html>
